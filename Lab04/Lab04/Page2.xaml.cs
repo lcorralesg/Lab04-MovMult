@@ -10,21 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace Lab04
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class Page2 : ContentPage
     {
-        public Page1()
+        public Page2()
         {
             InitializeComponent();
-
-            btnClose.Clicked += async (sender, e) =>
-            {
-                await Navigation.PopAsync();
-            };
         }
-
-        async void OnNextPageButtonClicked(object sender, EventArgs e)
+        async void OnPreviousPageButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page2());
+            await Navigation.PopAsync();
         }
     }
 }
